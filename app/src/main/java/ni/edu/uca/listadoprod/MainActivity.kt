@@ -44,7 +44,8 @@ class MainActivity : AppCompatActivity() {
             etID.setText(idContar.toString())
             etPrecio.setText("")
             etNombreProd.setText("")
-            etID.requestFocus()
+            btnAgregar.setText("Agregar")
+            etNombreProd.requestFocus()
         }
     }
 
@@ -111,21 +112,19 @@ class MainActivity : AppCompatActivity() {
     private fun applyChanges(){
         try {
             with(binding){
-                val id: Int = etID.text.toString().toInt()
-                val nombre: String = etNombreProd.text.toString()
-                val precio: Double = etPrecio.text.toString().toDouble()
+                val id = etID.text.toString().toInt()
+                val nombre = etNombreProd.text.toString()
+                val precio = etPrecio.text.toString().toDouble()
                 val prod = Producto(id, nombre, precio)
                 listaProd[id] = prod
                 rcvLista.adapter = ProductoAdapter(listaProd,
                     {producto ->  setEditMode(producto)},
                     {producto -> eliminarConfirm(producto)})
             }
-            editMode = false
         }catch (ex : Exception){
             Toast.makeText(this@MainActivity,"Error ${ex.toString()}",Toast.LENGTH_LONG).show()
         }
-        binding.etID.setText(idContar)
-        binding.btnAgregar.setText("Agregar")
+        editMode = false
         limpiar()
     }
 }
