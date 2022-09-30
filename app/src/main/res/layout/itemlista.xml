@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="180dp">
+    android:layout_height="180dp"
+    android:background="@color/BG2">
 
     <TextView
         android:id="@+id/tvCodProd"
@@ -19,6 +20,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/tvNombreProd"
         app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
         />
 
     <TextView
@@ -34,6 +36,7 @@
         app:layout_constraintLeft_toRightOf = "@+id/tvCodProd"
         app:layout_constraintRight_toRightOf = "parent"
         app:layout_constraintTop_toTopOf = "parent"
+        android:textColor="@color/white"
         />
 
     <TextView
@@ -48,6 +51,7 @@
         app:layout_constraintLeft_toRightOf = "@+id/tvCodProd"
         app:layout_constraintRight_toRightOf = "parent"
         app:layout_constraintTop_toBottomOf = "@+id/tvNombreProd"
+        android:textColor="@color/white"
         />
 
     <Button
@@ -61,7 +65,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnBorrar"
-        app:layout_constraintTop_toBottomOf="@id/tvPrecioProd" />
+        app:layout_constraintTop_toBottomOf="@id/tvPrecioProd"
+        android:backgroundTint="@color/Secondary"
+        />
 
     <Button
         android:id="@+id/btnBorrar"
@@ -74,6 +80,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnEditar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPrecioProd" />
+        app:layout_constraintTop_toBottomOf="@id/tvPrecioProd"
+        android:backgroundTint="@color/Secondary"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
